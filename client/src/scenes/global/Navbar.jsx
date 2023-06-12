@@ -9,11 +9,14 @@ import {
 } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
 import { shades } from '../../theme';
+import { setIsCartOpen } from '../state';
 
 
 const Navbar = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
+    const cart = useSelector((state) => state.cart.cart)
+
   return (
     <Box 
         display="flex"
@@ -37,8 +40,28 @@ const Navbar = () => {
             <Box
                 onClick={() => navigate("/")}
                 sx={{'&hover': {cursor: "pointer"}}}
+                color={shades.secondary[500]}
             >
                 ECOMMER 
+            </Box>
+            <Box 
+            display="flex"
+            justifyContent="space-between"
+            columnGap="20px"
+            zIndex="2"
+            >
+                <IconButton sx={{color: "black"}}>
+                    <SearchOutlined />
+                </IconButton>
+                <IconButton sx={{color: "black"}}>
+                    <PersonOutline />
+                </IconButton>
+                <IconButton sx={{color: "black"}}>
+                    <ShoppingBagOutlined />
+                </IconButton>
+                <IconButton sx={{color: "black"}}>
+                    <MenuOutlined />
+                </IconButton>
             </Box>
         </Box>
     </Box>
