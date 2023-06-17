@@ -5,10 +5,10 @@ import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 import { shades } from "../theme";
 import { addToCart } from "../scenes/state";
-import { useNaviagte } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Item = ({ item, width }) => {
-  const navigate = useNaviagte();
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const [count, setCount] = useState(1);
   const [isHovered, setIsHovered] = useState(false);
