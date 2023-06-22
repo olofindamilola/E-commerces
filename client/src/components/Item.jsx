@@ -13,17 +13,20 @@ const Item = ({ item, width }) => {
   const [count, setCount] = useState(1);
   const [isHovered, setIsHovered] = useState(false);
   const {
-    palette: { neutral },
+    neutral
   } = useTheme();
 
-  const { catergory, price, name, image } = item.attributes;
+  const { category, price, name, image } = item.attributes;
   const {
     data: {
-      formats: {
-        medium: { url },
+      attributes: {
+        formats: {
+          medium: { url },
+        },
       },
     },
   } = image;
+
   return (
     <Box width={width}>
       <Box
@@ -62,7 +65,6 @@ const Item = ({ item, width }) => {
                 <AddIcon />
               </IconButton>
             </Box>
-            {/* BUTTON */}
             <Button
               onClick={() => {
                 dispatch(addToCart({ item: { ...item, count } }));
@@ -76,12 +78,12 @@ const Item = ({ item, width }) => {
       </Box>
 
       <Box mt="3px">
-        <Typography variant="substitle2" color={neutral.dark}>
-          {catergory
+        <Typography variant="subtitle2" color={neutral.dark}>
+          {category
             .replace(/([A-Z])/g, " $1")
             .replace(/^./, (str) => str.toUpperCase())}
         </Typography>
-        <Typography>{name}</Typography> 
+        <Typography>{name}</Typography>
         <Typography fontWeight="bold">${price}</Typography>
       </Box>
     </Box>
