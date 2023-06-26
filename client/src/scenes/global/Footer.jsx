@@ -5,11 +5,12 @@ import { shades } from "../../theme";
 
 const Footer = () => {
     const {
-        palette: {netural},
-    } = useTheme();
+        neutral
+      } = useTheme();
+    
   return (
     <Box mt
-     ="70px" p="40px 0" backgroundColor={netural.light}>
+     ="70px" p="40px 0" backgroundColor={neutral.light}>
         <Box
             width="80%"
             margin="auto"
@@ -46,11 +47,11 @@ const Footer = () => {
                         mb="30px"
                         color={shades.secondary[500]}
                     >
-                        ECOMMER
+                        Contact Us
                     </Typography>
-                    <div>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni dolores repellat similique quaerat. Ab doloribus vero adipisci saepe. Commodi hic iusto repellendus rem soluta doloremque nobis alias aliquid qui eos? 
-                    </div>
+                    <Typography mb="30px">18 akeju street, shomolu</Typography>
+                    <Typography mb="30px">Email: kdammy2017@gmail.com</Typography>
+                    <Typography mb="30px">07044455673</Typography>
                 </Box>
             </Box>
     </Box>
